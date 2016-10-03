@@ -94,7 +94,7 @@ grid.newpage()
 	     grid.xaxis(at=seq(1800,1900,10),main=T)
 	     grid.text('Date',y=unit(-3,'lines'))
 	     grid.yaxis(main=T)
-	     grid.text('Mean SLP (hPa)',x=unit(-4,'lines'),rot=90)
+	     grid.text('Mean SLP anomaly (hPa)',x=unit(-4,'lines'),rot=90)
 
              # horizontal line at 0
 	     gp=gpar(col=rgb(0.5,0.5,0.5,1),fill=rgb(0.5,0.5,0.5,1),lwd=1)
@@ -134,7 +134,7 @@ grid.newpage()
 	     grid.xaxis(at=seq(1800,1900,10),main=T)
 	     grid.text('Date',y=unit(-3,'lines'))
 	     grid.yaxis(main=T)
-	     grid.text('Median SLP (hPa)',x=unit(-4,'lines'),rot=90)
+	     grid.text('SLP anomaly sd (hPa)',x=unit(-4,'lines'),rot=90)
 
              # horizontal line at 0
 	     #gp=gpar(col=rgb(0.5,0.5,0.5,1),fill=rgb(0.5,0.5,0.5,1),lwd=1)
