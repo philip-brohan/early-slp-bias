@@ -10,7 +10,7 @@ for(year in seq(1800,1870,1)) {
       cat('#SBATCH --ntasks=1\n')
       cat('#SBATCH --ntasks-per-core=1\n')
       cat('#SBATCH --time=5\n')
-      cat(sprintf("./obs_pressure_bias.R --year=%04d --month=%d\n",
+      cat(sprintf("./obs_pressure_bias_corrected.R --year=%04d --month=%d\n",
                   year,month))
       sink()
       system('sbatch multistart.auto.slm')

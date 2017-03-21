@@ -1,6 +1,7 @@
 #!/usr/bin/Rscript --no-save
 
 # Month-by-month pressure bias information in ICOADS
+#  After correction of early pressures
 
 library(parallel)
 library(lubridate)
@@ -21,7 +22,7 @@ n.total<-days_in_month(ymd(sprintf("%04d-%02d-01",year,month)))*24
 datadir<-'/scratch/hadpb'
 
 # load the R3 obs
-o<-ReadObs(sprintf("%s/ICOADS3/IMMA/IMMA1_R3.0.0_%04d-%02d.gz",
+o<-ReadObs(sprintf("%s/icoads_3.0_SLP_debiased/IMMA1_R3.0.0_SLPD_%04d-%02d.gz",
                    datadir,year,month))
 
 # Add the pressure comparisons for a selected hour
@@ -52,5 +53,5 @@ result<-list()
 for(i in seq_along(res)) {
   if(!is.null(res[[i]])) result<-rbind(result,res[[i]])
 }
-saveRDS(result,sprintf("%s/icoads_bias_check/%04d.%02d.Rdata",
+saveRDS(result,sprintf("%s/icoads_bias_check/corrected_%04d.%02d.Rdata",
                    datadir,year,month))
